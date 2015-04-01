@@ -27,11 +27,15 @@ public class CarController : MonoBehaviour {
 	private bool inRightLane = true;
 	private bool moveLeft;
 	private bool moveRight;
-	
+
+
+	//Health Reference Object
+	GameObject HealthWrenches;
 //---------------------------------------
 
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+		HealthWrenches = GameObject.Find("Health Wrenches");
 	}
 	
 	void Update(){
@@ -128,7 +132,13 @@ public class CarController : MonoBehaviour {
 		movingDown = false;
 	}
 
-
+	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.tag == "Obstacle") {
+			Debug.Log ("Hit Obstacle");
+			HealthWrenches.GetComponent<Health>().looseHealth();
+			Destroy (collision.gameObject);
+		}
+	}
 
 	public void Jump()
 	{
