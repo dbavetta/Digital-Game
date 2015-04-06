@@ -4,8 +4,7 @@ using System.Collections;
 public class SpawnController : MonoBehaviour {
 
 	public GameObject[] obj;
-	public float spawnMin = 1f;
-	public float spawnMax = 2f;
+	public float spawnInterval = 1f;
 	
 	// Use this for initialization
 	void Start () {
@@ -15,6 +14,6 @@ public class SpawnController : MonoBehaviour {
 	void Spawn(){
 		
 		Instantiate (obj [Random.Range (0, obj.GetLength (0))], transform.position, Quaternion.identity);
-		Invoke ("Spawn", Random.Range (spawnMin, spawnMax));
+		Invoke ("Spawn", spawnInterval);
 	}
 }
