@@ -87,28 +87,31 @@ public class CarController : MonoBehaviour {
 	//Performs the lane switch
 	public void SwitchLanes(){
 	
-		//SWITCHES LANES
-		float step = LaneSwitchSpeed * Time.deltaTime;
-		currentPosition.z = transform.position.z;
-		if (moveRight) {
-			//Move towards right lane
-			transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, RightLaneZ), step);
-			
-			//Checks if the car has made it to the right lane
-			if (currentPosition.z < (RightLaneZ + 0.1)){ // -2.0 is z coordinate for the right lane (+ 0.1 aded to fix bug)
-				inRightLane = true;
-				moveRight = false; //Right lane reached
-			}
-		} else if (moveLeft) {
-			//Move towards left lane
-			transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, LeftLaneZ), step);
-			
-			//Checks if the car has made it to the left lane
-			if(currentPosition.z > (LeftLaneZ - 0.1)){ // 0.3 is z coordinate for the left lane (- 0.1 aded to fix bug)
-				inRightLane = false;
-				moveLeft = false; //Left lane reached
+		if (!inAir) {
+			//SWITCHES LANES
+			float step = LaneSwitchSpeed * Time.deltaTime;
+			currentPosition.z = transform.position.z;
+			if (moveRight) {
+				//Move towards right lane
+				transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, RightLaneZ), step);
+				
+				//Checks if the car has made it to the right lane
+				if (currentPosition.z < (RightLaneZ + 0.1)){ // -2.0 is z coordinate for the right lane (+ 0.1 aded to fix bug)
+					inRightLane = true;
+					moveRight = false; //Right lane reached
+				}
+			} else if (moveLeft) {
+				//Move towards left lane
+				transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, LeftLaneZ), step);
+				
+				//Checks if the car has made it to the left lane
+				if(currentPosition.z > (LeftLaneZ - 0.1)){ // 0.3 is z coordinate for the left lane (- 0.1 aded to fix bug)
+					inRightLane = false;
+					moveLeft = false; //Left lane reached
+				}
 			}
 		}
+
 	}
 
 	//Applies downforce so the the car will fall faster

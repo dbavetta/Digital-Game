@@ -6,6 +6,6 @@ public class CameraFollow : MonoBehaviour {
 	public Transform player;
 
 	void Update () {
-		transform.position = new Vector3 (player.position.x + 6, 6.6f, -5.6f); //Camera Coordinates
+		transform.position = new Vector3 (player.position.x + 4, 7.5f, -4.3f); //Camera Coordinates
 	}
 }
