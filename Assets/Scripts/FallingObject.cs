@@ -5,17 +5,15 @@ public class FallingObject : MonoBehaviour {
 
 	public Rigidbody rb;
 
-	// Use this for initialization
-	void Start () {
+	void Start() {
 		rb = GetComponent<Rigidbody>();
 	}
 
-	void OnTriggerEnter (Collider other) 
-	{
-		if(other.tag == "Player")
-		{
+	void OnTriggerEnter(Collider coll){
+		
+		if (coll.gameObject.tag == "Player") {
+			Debug.Log ("Hit area");
 			rb.useGravity = true;
-			//rb.isKinematic = false;
 		}
 	}
 }
