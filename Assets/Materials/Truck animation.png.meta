@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: b1a0279320b9f4623ad27bdf58780f16
+timeCreated: 1428457307
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Truck animation_0
+    21300002: Truck animation_1
+    21300004: Truck animation_2
+    21300006: Truck animation_3
+    21300008: Truck animation_4
+    21300010: Truck animation_5
+    21300012: Truck animation_6
+    21300014: Truck animation_7
+    21300016: Truck animation_8
+    21300018: Truck animation_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Truck animation_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_1
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_2
+      rect:
+        serializedVersion: 2
+        x: 2666
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_3
+      rect:
+        serializedVersion: 2
+        x: 3999
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_4
+      rect:
+        serializedVersion: 2
+        x: 5332
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_5
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_6
+      rect:
+        serializedVersion: 2
+        x: 7998
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_7
+      rect:
+        serializedVersion: 2
+        x: 9331
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_8
+      rect:
+        serializedVersion: 2
+        x: 10664
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck animation_9
+      rect:
+        serializedVersion: 2
+        x: 11997
+        y: 0
+        width: 1333
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

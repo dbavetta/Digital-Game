@@ -132,13 +132,29 @@ public class CarController : MonoBehaviour {
 		movingDown = false;
 	}
 
-	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "Obstacle") {
-			Debug.Log ("Hit Obstacle");
+//	void OnCollisionEnter(Collision collision) {
+//		if (collision.gameObject.tag == "Obstacle") {
+//			Debug.Log ("Hit Obstacle");
+//			HealthWrenches.GetComponent<Health>().looseHealth();
+//			Destroy (collision.gameObject);
+//		}
+//	}
+
+	void OnTriggerEnter(Collider other){
+		
+		//Ends game if the players hits a destroyer (dies)
+		if (other.tag == "Enemy") {
+			Debug.Log ("Collide Enemy");
 			HealthWrenches.GetComponent<Health>().looseHealth();
-			Destroy (collision.gameObject);
+			Destroy (other.gameObject);
+		}
+		else if (other.tag == "Obstacle") {
+			HealthWrenches.GetComponent<Health>().looseHealth();
+			Debug.Log ("Collide Obstacle");
 		}
 	}
+
+
 
 	public void Jump()
 	{
