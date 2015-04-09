@@ -135,13 +135,13 @@ public class CarController : MonoBehaviour {
 		movingDown = false;
 	}
 
-//	void OnCollisionEnter(Collision collision) {
-//		if (collision.gameObject.tag == "Obstacle") {
-//			Debug.Log ("Hit Obstacle");
-//			HealthWrenches.GetComponent<Health>().looseHealth();
-//			Destroy (collision.gameObject);
-//		}
-//	}
+	void OnCollisionEnter(Collision collision) {
+		if (collision.gameObject.tag == "Obstacle") {
+			Debug.Log ("Hit Obstacle");
+			HealthWrenches.GetComponent<Health>().looseHealth();
+			Destroy (collision.gameObject);
+		}
+	}
 
 	void OnTriggerEnter(Collider other){
 		
@@ -162,13 +162,14 @@ public class CarController : MonoBehaviour {
 	public void Jump()
 	{
 
-		if (!inAir)
-		{
-			inAir = true;
-		//Jump
-			rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
+		if (transform.position.y > 0.0f) {
+			if (!inAir)
+			{
+				inAir = true;
+				//Jump
+				rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
+			}
 		}
-		
 		//Check to disallow jumping while in the air
 	}
 }

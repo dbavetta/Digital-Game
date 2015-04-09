@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Menu\SwipeDetector.cs" />
      <Compile Include="Assets\Scripts\Pause.cs" />
      <Compile Include="Assets\Scripts\SpawnController.cs" />
+     <Compile Include="Assets\Scripts\SpawnPiano.cs" />
      <Compile Include="Assets\Scripts\UI\Health.cs" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
  <Reference Include="UnityEngine.UI">
