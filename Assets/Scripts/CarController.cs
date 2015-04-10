@@ -28,6 +28,7 @@ public class CarController : MonoBehaviour {
 	private bool moveLeft;
 	private bool moveRight;
 
+	public GameObject explosion;
 
 	//Health Reference Object
 	GameObject HealthWrenches;
@@ -149,6 +150,9 @@ public class CarController : MonoBehaviour {
 		if (other.tag == "Enemy") {
 			Debug.Log ("Collide Enemy");
 			HealthWrenches.GetComponent<Health>().looseHealth();
+			Vector3 tempPos = new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z + 2.0f);
+			Instantiate(explosion, tempPos, transform.rotation);
+			//Play audio
 			Destroy (other.gameObject);
 		}
 		else if (other.tag == "Obstacle") {

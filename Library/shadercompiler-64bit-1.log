@@ -1,3 +1,33 @@
 Base path: /Applications/Unity/Unity.app/Contents
 Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-2015748864
 Cmd: getPlatforms
+Cmd: preprocess
+  insize=4716 outsize=806 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=636 outsize=282 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=636 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3880 outsize=6294 kw=QUALITY_HIGH OCTAVES_4 SCATTERING_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3880 outsize=6 kw=QUALITY_HIGH OCTAVES_4 SCATTERING_ON ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=966 outsize=587 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=966 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3880 outsize=6292 kw=OCTAVES_4 SCATTERING_ON QUALITY_LOW ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3880 outsize=6 kw=OCTAVES_4 SCATTERING_ON QUALITY_LOW ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3880 outsize=6294 kw=OCTAVES_4 SCATTERING_ON QUALITY_MED ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3880 outsize=6 kw=OCTAVES_4 SCATTERING_ON QUALITY_MED ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3880 outsize=7190 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_5 ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3880 outsize=6 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_5 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3880 outsize=3542 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_1 ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3880 outsize=6 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_1 ok=1
