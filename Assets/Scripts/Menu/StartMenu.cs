@@ -9,12 +9,15 @@ public class StartMenu : MonoBehaviour {
 	Animator anim;
 	int levelSelected;
 	// Use this for initialization
-	void Start () 
+	void Start() 
 	{
+		Time.timeScale = 1;
+
 		StartPanel = GameObject.Find("Start Panel");
 		InstructionPanel = GameObject.Find("Instruction Panel");
 		anim = GetComponent<Animator>();
 		InstructionPanel.SetActive(false);
+		StartPanel.SetActive(true);
 	}
 	
 	// Update is called once per frame
@@ -40,9 +43,14 @@ public class StartMenu : MonoBehaviour {
 		InstructionPanel.SetActive(false);
 		StartPanel.SetActive(true);
 	}
-	public void startGame()
+	public void startTutorial()
 	{
 		Application.LoadLevel(1);
+	}
+
+	public void startStage1()
+	{
+		Application.LoadLevel(2);
 	}
 	public void goToStartMenuSlide()
 	{

@@ -32,11 +32,14 @@ public class CarController : MonoBehaviour {
 
 	//Health Reference Object
 	GameObject HealthWrenches;
+	GameObject EndStagePanel;
 //---------------------------------------
 
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		HealthWrenches = GameObject.Find("Health Wrenches");
+		EndStagePanel = GameObject.Find("End Stage Panel");
+		EndStagePanel.SetActive(false);
 	}
 	
 	void Update(){
@@ -158,6 +161,12 @@ public class CarController : MonoBehaviour {
 		else if (other.tag == "Obstacle") {
 			HealthWrenches.GetComponent<Health>().looseHealth();
 			Debug.Log ("Collide Obstacle");
+		}
+
+		else if (other.tag == "Stage End")
+		{
+			EndStagePanel.SetActive(true);
+			Time.timeScale = 0;
 		}
 	}
 
