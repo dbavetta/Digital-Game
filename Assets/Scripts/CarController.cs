@@ -49,7 +49,6 @@ public class CarController : MonoBehaviour {
 		carCrash = sounds[0];
 		HealthWrenches = GameObject.Find("Health Wrenches");
 		EndStagePanel = GameObject.Find("End Stage Panel");
-		EndStagePanel.SetActive(false);
 		potHoleCrash = sounds[1];
 		buttonPress = sounds [2];
 	}
