@@ -1,64 +1,6 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-18100
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-2-9476
 Cmd: getPlatforms
-Cmd: compileSnippet
-  api=5 type=0 insize=4019 outsize=4899 kw=QUALITY_HIGH OCTAVES_4 SCATTERING_OFF ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=4108 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_1 ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=3598 kw=QUALITY_HIGH SCATTERING_OFF OCTAVES_2 ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=4121 kw=QUALITY_HIGH SCATTERING_OFF OCTAVES_3 ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=5160 kw=QUALITY_HIGH SCATTERING_OFF OCTAVES_5 ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=4631 kw=OCTAVES_4 SCATTERING_OFF QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=5 type=0 insize=4019 outsize=3246 kw=SCATTERING_OFF OCTAVES_1 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=3597 kw=SCATTERING_OFF OCTAVES_2 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=8406 kw=SCATTERING_ON OCTAVES_5 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=4632 kw=OCTAVES_4 SCATTERING_OFF QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=3010 kw=SCATTERING_OFF OCTAVES_1 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=6330 kw=SCATTERING_ON OCTAVES_3 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=9 type=0 insize=4019 outsize=8408 kw=SCATTERING_ON OCTAVES_5 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=QUALITY_HIGH OCTAVES_4 SCATTERING_OFF ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_1 ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=QUALITY_HIGH SCATTERING_OFF OCTAVES_2 ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=QUALITY_HIGH SCATTERING_ON OCTAVES_5 ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=OCTAVES_4 SCATTERING_ON QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=OCTAVES_4 SCATTERING_OFF QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=SCATTERING_ON OCTAVES_1 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=SCATTERING_ON OCTAVES_2 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=SCATTERING_ON OCTAVES_3 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=SCATTERING_ON OCTAVES_5 QUALITY_LOW ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=OCTAVES_4 SCATTERING_ON QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=SCATTERING_ON OCTAVES_1 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=SCATTERING_ON OCTAVES_1 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=SCATTERING_ON OCTAVES_3 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=9 type=1 insize=4019 outsize=7 kw=SCATTERING_OFF OCTAVES_3 QUALITY_MED ok=1
-Cmd: compileSnippet
-  api=5 type=1 insize=4019 outsize=6 kw=SCATTERING_OFF OCTAVES_5 QUALITY_MED ok=1
 Unhandled exception: Readfile from pipe failed. GLE=The pipe has been ended.
 
 
