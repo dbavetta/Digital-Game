@@ -3,10 +3,12 @@ using System.Collections;
 
 public class SpawnPiano : MonoBehaviour {
 
-	public GameObject piano1;
-	
-	private bool piano1_spawned = false;
+	public int level; //Current game level
+	public GameObject piano1; //Prefab you want to fall
 
+	//Lane positions
+	private float leftL = 0.3f;
+	private float rightL = -1.5f;
 	
 	// Update is called once per frame
 	void Update () {
@@ -15,23 +17,35 @@ public class SpawnPiano : MonoBehaviour {
 	
 	void Start()
 	{
-		Invoke("CreatePiano", 20.5f);
-		Invoke("CreatePiano2", 32.5f);
-		Invoke("CreatePiano3", 42.5f);
+		if (level == 1) {
+			Invoke ("CreatePiano1", 20.5f);
+			Invoke ("CreatePiano2", 32.5f);
+			Invoke ("CreatePiano3", 42.5f);
+		} else if (level == 2) {
+			Invoke ("CreatePiano1", 7.5f);
+			Invoke ("CreatePiano2", 9.0f);
+		}
 	}
 	
 	// Will be called 3 seconds after level start
-	void CreatePiano()
+	void CreatePiano1()
 	{
-			Instantiate(piano1, new Vector3(140, 10, -1.5f), Quaternion.identity);
+		if (level == 1)
+			Instantiate (piano1, new Vector3 (140, 10, rightL), Quaternion.identity);
+		else if (level == 2)
+			Instantiate (piano1, new Vector3 (60, 10, rightL), Quaternion.identity);
 	}
 	void CreatePiano2()
 	{
-		Instantiate(piano1, new Vector3(210, 10, -1.5f), Quaternion.identity);
-		Instantiate(piano1, new Vector3(210, 10, 0.3f), Quaternion.identity);
+		if (level == 1) {
+			Instantiate (piano1, new Vector3 (210, 10, rightL), Quaternion.identity);
+			Instantiate (piano1, new Vector3 (210, 10, leftL), Quaternion.identity);
+		} else if (level == 2) {
+			Instantiate (piano1, new Vector3 (70, 10, leftL), Quaternion.identity);
+		}
 	}
 	void CreatePiano3()
 	{
-		Instantiate(piano1, new Vector3(270, 10, 0.3f), Quaternion.identity);
+		Instantiate(piano1, new Vector3(270, 10, leftL), Quaternion.identity);
 	}
 }

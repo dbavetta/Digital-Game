@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 //'X' to SWITCH LANES
 //'Space' to JUMP
+[RequireComponent(typeof(AudioSource))]
 public class CarController : MonoBehaviour {
 	public Rigidbody rb;
 //---------------------------------------	
@@ -28,7 +29,13 @@ public class CarController : MonoBehaviour {
 	private bool moveLeft;
 	private bool moveRight;
 
+	//Explosion Effect
 	public GameObject explosion;
+
+	//Collision Noises
+	public AudioSource[] sounds;
+	public AudioSource carCrash;
+	public AudioSource potHoleCrash;
 
 	//Health Reference Object
 	GameObject HealthWrenches;
@@ -37,6 +44,9 @@ public class CarController : MonoBehaviour {
 
 	void Start () {
 		rb = GetComponent<Rigidbody>();
+		sounds = GetComponents<AudioSource>();
+		carCrash = sounds[0];
+		potHoleCrash = sounds[1];
 		HealthWrenches = GameObject.Find("Health Wrenches");
 		EndStagePanel = GameObject.Find("End Stage Panel");
 		EndStagePanel.SetActive(false);
@@ -152,25 +162,20 @@ public class CarController : MonoBehaviour {
 		//Ends game if the players hits a destroyer (dies)
 		if (other.tag == "Enemy") {
 			Debug.Log ("Collide Enemy");
-			HealthWrenches.GetComponent<Health>().looseHealth();
-			Vector3 tempPos = new Vector3(transform.position.x, transform.position.y - 1.0f, transform.position.z + 2.0f);
-			Instantiate(explosion, tempPos, transform.rotation);
-			//Play audio
+			HealthWrenches.GetComponent<Health> ().looseHealth ();
+			Vector3 tempPos = new Vector3 (transform.position.x, transform.position.y - 1.0f, transform.position.z + 2.0f);
+			Instantiate (explosion, tempPos, transform.rotation);
+			carCrash.Play ();
 			Destroy (other.gameObject);
-		}
-		else if (other.tag == "Obstacle") {
-			HealthWrenches.GetComponent<Health>().looseHealth();
+		} else if (other.tag == "Obstacle") {
+			HealthWrenches.GetComponent<Health> ().looseHealth ();
+			potHoleCrash.Play();
 			Debug.Log ("Collide Obstacle");
-		}
-
-		else if (other.tag == "Stage End")
-		{
-			EndStagePanel.SetActive(true);
+		} else if (other.tag == "Stage End") {
+			EndStagePanel.SetActive (true);
 			Time.timeScale = 0;
 		}
 	}
-
-
 
 	public void Jump()
 	{
