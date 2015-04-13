@@ -46,10 +46,10 @@ public class CarController : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		sounds = GetComponents<AudioSource>();
 		carCrash = sounds[0];
-		potHoleCrash = sounds[1];
 		HealthWrenches = GameObject.Find("Health Wrenches");
 		EndStagePanel = GameObject.Find("End Stage Panel");
 		EndStagePanel.SetActive(false);
+		potHoleCrash = sounds[1];
 	}
 	
 	void Update(){
