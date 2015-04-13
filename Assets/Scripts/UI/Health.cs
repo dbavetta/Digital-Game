@@ -5,9 +5,12 @@ public class Health : MonoBehaviour {
 	public Image [] HealthImage;
 	public int healthCount;
 
+	GameObject EndStagePanel;
+
 	// Use this for initialization
 	void Start () 
 	{
+		EndStagePanel = GameObject.Find("End Stage Panel");
 		healthCount = HealthImage.Length - 1;
 	}
 	
@@ -18,10 +21,9 @@ public class Health : MonoBehaviour {
 
 	public void looseHealth()
 	{
-		if(healthCount >= 0)
-		{
-			HealthImage[healthCount].gameObject.SetActive(false);
+		if (healthCount >= 0) {
+			HealthImage [healthCount].gameObject.SetActive (false);
 			healthCount--;
-		}
+		} 
 	}
 }

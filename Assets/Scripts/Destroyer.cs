@@ -7,8 +7,9 @@ public class Destroyer : MonoBehaviour {
 		
 		//Ends game if the players hits a destroyer (dies)
 		if (other.tag == "Player") {
-			
-			Debug.Break();
+//			GameObject EndStagePanel = GameObject.Find("End Stage Panel");
+//			EndStagePanel.SetActive (true);
+//			Time.timeScale = 0;
 			return;
 		}
 		

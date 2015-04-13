@@ -27,6 +27,9 @@ public class SpawnPiano : MonoBehaviour {
 			Invoke ("CreatePiano3", 24.0f);
 			Invoke ("CreatePiano4", 31.0f);
 			Invoke ("CreatePiano5", 40.5f);
+			Invoke ("CreatePiano6", 47.5f);
+			Invoke ("CreatePiano7", 49.0f);
+			Invoke ("CreatePiano8", 50.5f);
 		}
 	}
 	
@@ -70,7 +73,35 @@ public class SpawnPiano : MonoBehaviour {
 			//Instantiate(piano1, new Vector3(270, 10, leftL), Quaternion.identity);
 		}
 		else if (level == 2){
-			Instantiate(piano1, new Vector3(260, 10, leftL), Quaternion.identity);
+			Instantiate(piano1, new Vector3(260, 10, rightL), Quaternion.identity);
+		}
+	}
+	void CreatePiano6()
+	{
+		if (level == 1) {
+			//Instantiate(piano1, new Vector3(270, 10, leftL), Quaternion.identity);
+		}
+		else if (level == 2){
+			Instantiate(piano1, new Vector3(300, 10, rightL), Quaternion.identity);
+		}
+	}
+	void CreatePiano7()
+	{
+		if (level == 1) {
+			//Instantiate(piano1, new Vector3(270, 10, leftL), Quaternion.identity);
+		}
+		else if (level == 2){
+			Instantiate(piano1, new Vector3(310, 10, leftL), Quaternion.identity);
+			Instantiate(piano1, new Vector3(310, 10, rightL), Quaternion.identity);
+		}
+	}
+	void CreatePiano8()
+	{
+		if (level == 1) {
+			//Instantiate(piano1, new Vector3(270, 10, leftL), Quaternion.identity);
+		}
+		else if (level == 2){
+			Instantiate(piano1, new Vector3(320, 10, leftL), Quaternion.identity);
 		}
 	}
 }

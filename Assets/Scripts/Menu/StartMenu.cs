@@ -52,6 +52,10 @@ public class StartMenu : MonoBehaviour {
 	{
 		Application.LoadLevel(2);
 	}
+	public void startStage2()
+	{
+		Application.LoadLevel(3);
+	}
 	public void goToStartMenuSlide()
 	{
 		anim.SetBool("moveRight",false);

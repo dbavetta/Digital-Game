@@ -36,6 +36,7 @@ public class CarController : MonoBehaviour {
 	public AudioSource[] sounds;
 	public AudioSource carCrash;
 	public AudioSource potHoleCrash;
+	public AudioSource buttonPress;
 
 	//Health Reference Object
 	GameObject HealthWrenches;
@@ -50,6 +51,7 @@ public class CarController : MonoBehaviour {
 		EndStagePanel = GameObject.Find("End Stage Panel");
 		EndStagePanel.SetActive(false);
 		potHoleCrash = sounds[1];
+		buttonPress = sounds [2];
 	}
 	
 	void Update(){
@@ -85,7 +87,7 @@ public class CarController : MonoBehaviour {
 //			moveRight = true; //Sets move right as objective
 //			moveLeft = false; //Disables the option to move left
 //		}
-
+		buttonPress.Play ();
 		if ( inRightLane) { //In right lane
 			Debug.Log("Switching to left lane (X)");
 			moveLeft = true; //Sets move left as objective 
@@ -100,12 +102,14 @@ public class CarController : MonoBehaviour {
 
 	//Performs the lane switch
 	public void SwitchLanes(){
-	
+
 		if (!inAir) {
+
 			//SWITCHES LANES
 			float step = LaneSwitchSpeed * Time.deltaTime;
 			currentPosition.z = transform.position.z;
 			if (moveRight) {
+
 				//Move towards right lane
 				transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, RightLaneZ), step);
 				
@@ -115,6 +119,7 @@ public class CarController : MonoBehaviour {
 					moveRight = false; //Right lane reached
 				}
 			} else if (moveLeft) {
+
 				//Move towards left lane
 				transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, LeftLaneZ), step);
 				
@@ -152,6 +157,7 @@ public class CarController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == "Obstacle") {
 			Debug.Log ("Hit Obstacle");
+			potHoleCrash.Play();
 			HealthWrenches.GetComponent<Health>().looseHealth();
 			Destroy (collision.gameObject);
 		}
@@ -171,7 +177,7 @@ public class CarController : MonoBehaviour {
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			potHoleCrash.Play();
 			Debug.Log ("Collide Obstacle");
-		} else if (other.tag == "Stage End") {
+		} else if (other.tag == "End Stage") {
 			EndStagePanel.SetActive (true);
 			Time.timeScale = 0;
 		}
@@ -179,7 +185,7 @@ public class CarController : MonoBehaviour {
 
 	public void Jump()
 	{
-
+		buttonPress.Play ();
 		if (transform.position.y > 0.0f) {
 			if (!inAir)
 			{
