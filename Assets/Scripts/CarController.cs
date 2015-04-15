@@ -32,49 +32,55 @@ public class CarController : MonoBehaviour {
 	//Explosion Effect
 	public GameObject explosion;
 
-	//Collision Noises
+	//Sound effects
 	public AudioSource[] sounds;
 	public AudioSource carCrash;
 	public AudioSource potHoleCrash;
 	public AudioSource buttonPress;
+	public AudioSource pickUpCoin;
 
 	//Health Reference Object
 	GameObject HealthWrenches;
 	GameObject EndStagePanel;
 
-	public static int Coins = 0;
+	//Coin Varibales
+	public static int Coins;
 	Text GUICoins;
+	Text lvlCoins;
+	Text totalCoins;
+
 //---------------------------------------
 
 	void Start () {
+		HealthWrenches = GameObject.Find("Health Wrenches");
+		EndStagePanel = GameObject.Find("End Stage Panel");
 		GUICoins = GameObject.Find("Coin Count").GetComponent<Text>();
+		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
+		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
+
 		GUICoins.text = "Coins: " + Coins;
 		rb = GetComponent<Rigidbody>();
 		sounds = GetComponents<AudioSource>();
 		carCrash = sounds[0];
-		HealthWrenches = GameObject.Find("Health Wrenches");
-		EndStagePanel = GameObject.Find("End Stage Panel");
 		potHoleCrash = sounds[1];
 		buttonPress = sounds [2];
+		pickUpCoin = sounds[3];
+		Coins = 0;
 	}
 	
 	void Update(){
 
 		GUICoins.text = "Coins: " + Coins;
 		//FallingSpeed ();
-
 		//InitLaneSwitch ();
-
 		SwitchLanes ();
 	}
 	
 	void FixedUpdate () {
-		//JUMP
+
 		if (Input.GetKeyDown(KeyCode.Space) && !inAir)
 			Jump();
 
-
-		
 		//MOVE FORWARD by a factor of 'MaxSpeed'
 		rb.velocity = new Vector3 (MaxSpeed, rb.velocity.y, rb.velocity.z);
 	}
@@ -82,16 +88,6 @@ public class CarController : MonoBehaviour {
 	//Checks which lane the car is in and send the car to the opposite
 	public void InitLaneSwitch(){
 
-//		if (Input.GetKeyDown(KeyCode.X) && inRightLane) { //In right lane
-//			Debug.Log("Switching to left lane (X)");
-//			moveLeft = true; //Sets move left as objective 
-//			moveRight = false; //Disables the option to move right
-//		}
-//		else if (Input.GetKeyDown(KeyCode.X) && !inRightLane){ //In left lane
-//			Debug.Log("Switching to right lane (X)");
-//			moveRight = true; //Sets move right as objective
-//			moveLeft = false; //Disables the option to move left
-//		}
 		buttonPress.Play ();
 		if ( inRightLane) { //In right lane
 			Debug.Log("Switching to left lane (X)");
@@ -109,12 +105,9 @@ public class CarController : MonoBehaviour {
 	public void SwitchLanes(){
 
 		if (!inAir) {
-
-			//SWITCHES LANES
 			float step = LaneSwitchSpeed * Time.deltaTime;
 			currentPosition.z = transform.position.z;
 			if (moveRight) {
-
 				//Move towards right lane
 				transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, RightLaneZ), step);
 				
@@ -124,7 +117,6 @@ public class CarController : MonoBehaviour {
 					moveRight = false; //Right lane reached
 				}
 			} else if (moveLeft) {
-
 				//Move towards left lane
 				transform.position = Vector3.MoveTowards (transform.position, new Vector3(transform.position.x, transform.position.y, LeftLaneZ), step);
 				
@@ -135,7 +127,17 @@ public class CarController : MonoBehaviour {
 				}
 			}
 		}
+	}
 
+	public void Jump(){
+
+		buttonPress.Play ();
+		if (inAir == false){
+
+			inAir = true;
+			rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
+			//Debug.Log("Jmp: " + inAir);
+		}
 	}
 
 	//Applies downforce so the the car will fall faster
@@ -151,26 +153,11 @@ public class CarController : MonoBehaviour {
 		
 		lastAirPosition = transform.position;
 	}
-
-	//Checks if the object is on the ground
-	void OnCollisionStay(){
-
-		inAir = false;
-		movingDown = false;
-	}
-
-	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "Obstacle") {
-			Debug.Log ("Hit Obstacle");
-			potHoleCrash.Play();
-			HealthWrenches.GetComponent<Health>().looseHealth();
-			Destroy (collision.gameObject);
-		}
-	}
-
+	
+	//Handles All Collisions
 	void OnTriggerEnter(Collider other){
 		
-		//Ends game if the players hits a destroyer (dies)
+		//Hits Car
 		if (other.tag == "Enemy") {
 			Debug.Log ("Collide Enemy");
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
@@ -178,31 +165,71 @@ public class CarController : MonoBehaviour {
 			Instantiate (explosion, tempPos, transform.rotation);
 			carCrash.Play ();
 			Destroy (other.gameObject);
+		//Hits Pothole or piano
 		} else if (other.tag == "Obstacle") {
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			potHoleCrash.Play ();
 			Debug.Log ("Collide Obstacle");
-		} else if (other.tag == "End Stage") {
-			EndStagePanel.SetActive (true);
-			Time.timeScale = 0;
+		//Hits coin
 		} else if (other.tag == "Coin") {
 			Debug.Log("Coin hit");
+			pickUpCoin.Play();
 			Coins++;
+			SaveCoins ();
 			Destroy(other.gameObject);
+		//Reaches the end of the level
+		} else if (other.tag == "End Stage") {
+			//Sets coin values
+			SaveCoins();
+			int LevelCoins = CarController.Coins; //Coins obtained from current level
+			int TotalCoinsSaved = PlayerPrefs.GetInt("Coins"); //All previously obtained coins
+
+			//UI Labels
+			EndStagePanel.SetActive (true);
+			lvlCoins.enabled = true;
+			totalCoins.enabled = true;
+			lvlCoins.text = "Coins Obtained: " + LevelCoins;
+			totalCoins.text = "Total Coins: " + TotalCoinsSaved;
+
+			Time.timeScale = 0;
+		} 
+	}
+
+	//Saves all obtained coins
+	void SaveCoins(){
+
+		//Saves the overall coin count in memory
+		if (PlayerPrefs.GetInt ("Coins") == null) {
+			PlayerPrefs.SetInt ("Coins", Coins);
+		}else{
+			PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + Coins); 
 		}
 	}
 
-	public void Jump()
-	{
-		buttonPress.Play ();
-		if (transform.position.y > 0.0f) {
-			if (!inAir)
-			{
-				inAir = true;
-				//Jump
-				rb.velocity = new Vector3 (rb.velocity.x, jumpForce, rb.velocity.z);
-			}
+	//Checks if the object is on the ground
+	void OnCollisionStay(Collision other){
+
+		if (other.gameObject.tag == "ground") {
+			inAir = false;
+			movingDown = false;
 		}
-		//Check to disallow jumping while in the air
+		Debug.Log ("Coll2: " + inAir);
+
+	}
+
+	public void DeleteCoins(){
+		Debug.Log ("Before: " + PlayerPrefs.GetInt("Coins"));
+		PlayerPrefs.DeleteKey("Coins");
+		Debug.Log ("After: " + PlayerPrefs.GetInt("Coins"));
+	}
+
+	void OnCollisionEnter(Collision collision) {
+		
+		if (collision.gameObject.tag == "Obstacle") {
+			Debug.Log ("Hit Obstacle");
+			potHoleCrash.Play();
+			HealthWrenches.GetComponent<Health>().looseHealth();
+			Destroy (collision.gameObject);
+		}
 	}
 }
