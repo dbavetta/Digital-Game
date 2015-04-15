@@ -6,6 +6,8 @@ public class StartMenu : MonoBehaviour {
 
 	GameObject StartPanel;
 	GameObject InstructionPanel;
+	GameObject LoadingScreenPanel;
+	GameObject StagePanel;
 	Animator anim;
 	int levelSelected;
 	// Use this for initialization
@@ -15,7 +17,10 @@ public class StartMenu : MonoBehaviour {
 
 		StartPanel = GameObject.Find("Start Panel");
 		InstructionPanel = GameObject.Find("Instruction Panel");
+		LoadingScreenPanel = GameObject.Find("Loading Screen Panel");
+		StagePanel = GameObject.Find("Stage Panels");
 		anim = GetComponent<Animator>();
+		LoadingScreenPanel.SetActive(false);
 		InstructionPanel.SetActive(false);
 		StartPanel.SetActive(true);
 	}
@@ -45,15 +50,21 @@ public class StartMenu : MonoBehaviour {
 	}
 	public void startTutorial()
 	{
+		StagePanel.SetActive(false);
+		LoadingScreenPanel.SetActive(true);
 		Application.LoadLevel(1);
 	}
 
 	public void startStage1()
 	{
+		StagePanel.SetActive(false);
+		LoadingScreenPanel.SetActive(true);
 		Application.LoadLevel(2);
 	}
 	public void startStage2()
 	{
+		StagePanel.SetActive(false);
+		LoadingScreenPanel.SetActive(true);
 		Application.LoadLevel(3);
 	}
 	public void goToStartMenuSlide()
