@@ -41,9 +41,14 @@ public class CarController : MonoBehaviour {
 	//Health Reference Object
 	GameObject HealthWrenches;
 	GameObject EndStagePanel;
+
+	public static int Coins = 0;
+	Text GUICoins;
 //---------------------------------------
 
 	void Start () {
+		GUICoins = GameObject.Find("Coin Count").GetComponent<Text>();
+		GUICoins.text = "Coins: " + Coins;
 		rb = GetComponent<Rigidbody>();
 		sounds = GetComponents<AudioSource>();
 		carCrash = sounds[0];
@@ -55,6 +60,7 @@ public class CarController : MonoBehaviour {
 	
 	void Update(){
 
+		GUICoins.text = "Coins: " + Coins;
 		//FallingSpeed ();
 
 		//InitLaneSwitch ();
@@ -174,11 +180,15 @@ public class CarController : MonoBehaviour {
 			Destroy (other.gameObject);
 		} else if (other.tag == "Obstacle") {
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
-			potHoleCrash.Play();
+			potHoleCrash.Play ();
 			Debug.Log ("Collide Obstacle");
 		} else if (other.tag == "End Stage") {
 			EndStagePanel.SetActive (true);
 			Time.timeScale = 0;
+		} else if (other.tag == "Coin") {
+			Debug.Log("Coin hit");
+			Coins++;
+			Destroy(other.gameObject);
 		}
 	}
 
