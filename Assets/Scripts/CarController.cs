@@ -58,7 +58,7 @@ public class CarController : MonoBehaviour {
 		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
 		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
 
-		GUICoins.text = "Coins: " + Coins;
+		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
 		sounds = GetComponents<AudioSource>();
 		carCrash = sounds[0];
@@ -70,7 +70,7 @@ public class CarController : MonoBehaviour {
 	
 	void Update(){
 
-		GUICoins.text = "Coins: " + Coins;
+		GUICoins.text = ": " + Coins;
 		//FallingSpeed ();
 		//InitLaneSwitch ();
 		SwitchLanes ();
