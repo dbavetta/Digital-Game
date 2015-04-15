@@ -1,6 +1,31 @@
 Base path: /Applications/Unity/Unity.app/Contents
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-1907172096
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-1919750912
 Cmd: getPlatforms
-End of pipe
-
-Quitting shader compiler process
+Cmd: compileSnippet
+  api=0 type=0 insize=9591 outsize=6366 kw=UNITY_COLORSPACE_GAMMA ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=9591 outsize=6 kw=UNITY_COLORSPACE_GAMMA ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=990 outsize=450 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=990 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1001 outsize=541 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1001 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1051 outsize=569 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1051 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1089 outsize=656 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1089 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=636 outsize=282 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=636 outsize=6 kw= ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=3880 outsize=6294 kw=OCTAVES_4 QUALITY_HIGH SCATTERING_ON ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=3880 outsize=6 kw=OCTAVES_4 QUALITY_HIGH SCATTERING_ON ok=1

@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 9f692c27161e541e4a4ae4c01e128870
+timeCreated: 1429124409
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Truck Animation-00000
+    21300002: Truck Animation-00030
+    21300004: Truck Animation-00001
+    21300006: Truck Animation-00002
+    21300008: Truck Animation-00003
+    21300010: Truck Animation-00004
+    21300012: Truck Animation-00005
+    21300014: Truck Animation-00006
+    21300016: Truck Animation-00007
+    21300018: Truck Animation-00008
+    21300020: Truck Animation-00009
+    21300022: Truck Animation-00010
+    21300024: Truck Animation-00011
+    21300026: Truck Animation-00012
+    21300028: Truck Animation-00013
+    21300030: Truck Animation-00014
+    21300032: Truck Animation-00015
+    21300034: Truck Animation-00016
+    21300036: Truck Animation-00017
+    21300038: Truck Animation-00018
+    21300040: Truck Animation-00019
+    21300042: Truck Animation-00020
+    21300044: Truck Animation-00021
+    21300046: Truck Animation-00022
+    21300048: Truck Animation-00023
+    21300050: Truck Animation-00024
+    21300052: Truck Animation-00025
+    21300054: Truck Animation-00026
+    21300056: Truck Animation-00027
+    21300058: Truck Animation-00028
+    21300060: Truck Animation-00029
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 4096
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Truck Animation-00000
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1814
+        width: 600
+        height: 232
+      alignment: 9
+      pivot: {x: .5, y: .556034505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00030
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1814
+        width: 600
+        height: 232
+      alignment: 9
+      pivot: {x: .5, y: .556034505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00001
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1813
+        width: 600
+        height: 233
+      alignment: 9
+      pivot: {x: .5, y: .557939887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00002
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1813
+        width: 600
+        height: 233
+      alignment: 9
+      pivot: {x: .5, y: .557939887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00003
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1812
+        width: 600
+        height: 234
+      alignment: 9
+      pivot: {x: .5, y: .555555582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00004
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1812
+        width: 600
+        height: 234
+      alignment: 9
+      pivot: {x: .5, y: .555555582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00005
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 1811
+        width: 600
+        height: 235
+      alignment: 9
+      pivot: {x: .5, y: .553191483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00006
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1574
+        width: 600
+        height: 235
+      alignment: 9
+      pivot: {x: .5, y: .553191483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00007
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1573
+        width: 600
+        height: 236
+      alignment: 9
+      pivot: {x: .5, y: .550847471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00008
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1572
+        width: 600
+        height: 237
+      alignment: 9
+      pivot: {x: .5, y: .548523188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00009
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1571
+        width: 600
+        height: 238
+      alignment: 9
+      pivot: {x: .5, y: .546218514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00010
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1571
+        width: 600
+        height: 238
+      alignment: 9
+      pivot: {x: .5, y: .546218514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00011
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 1570
+        width: 600
+        height: 239
+      alignment: 9
+      pivot: {x: .5, y: .543933034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00012
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1329
+        width: 600
+        height: 239
+      alignment: 9
+      pivot: {x: .5, y: .543933034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00013
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1328
+        width: 600
+        height: 240
+      alignment: 9
+      pivot: {x: .5, y: .541666687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00014
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1328
+        width: 600
+        height: 240
+      alignment: 9
+      pivot: {x: .5, y: .541666687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00015
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1329
+        width: 600
+        height: 239
+      alignment: 9
+      pivot: {x: .5, y: .539748967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00016
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1328
+        width: 600
+        height: 240
+      alignment: 9
+      pivot: {x: .5, y: .541666687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00017
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 1328
+        width: 600
+        height: 240
+      alignment: 9
+      pivot: {x: .5, y: .541666687}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00018
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1087
+        width: 600
+        height: 239
+      alignment: 9
+      pivot: {x: .5, y: .543933034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00019
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1087
+        width: 600
+        height: 239
+      alignment: 9
+      pivot: {x: .5, y: .543933034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00020
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 1088
+        width: 600
+        height: 238
+      alignment: 9
+      pivot: {x: .5, y: .546218514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00021
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1088
+        width: 600
+        height: 238
+      alignment: 9
+      pivot: {x: .5, y: .546218514}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00022
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 1089
+        width: 600
+        height: 237
+      alignment: 9
+      pivot: {x: .5, y: .548523188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00023
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 1090
+        width: 600
+        height: 236
+      alignment: 9
+      pivot: {x: .5, y: .550847471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00024
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 850
+        width: 600
+        height: 235
+      alignment: 9
+      pivot: {x: .5, y: .553191483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00025
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 850
+        width: 600
+        height: 235
+      alignment: 9
+      pivot: {x: .5, y: .553191483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00026
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 851
+        width: 600
+        height: 234
+      alignment: 9
+      pivot: {x: .5, y: .555555582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00027
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 851
+        width: 600
+        height: 234
+      alignment: 9
+      pivot: {x: .5, y: .555555582}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00028
+      rect:
+        serializedVersion: 2
+        x: 2410
+        y: 852
+        width: 600
+        height: 233
+      alignment: 9
+      pivot: {x: .5, y: .557939887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Truck Animation-00029
+      rect:
+        serializedVersion: 2
+        x: 3012
+        y: 852
+        width: 600
+        height: 233
+      alignment: 9
+      pivot: {x: .5, y: .557939887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
