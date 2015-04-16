@@ -6,7 +6,9 @@ using System.Collections.Generic;
 
 public class GenerateMap : MonoBehaviour {
 
+	public bool randomGeneration = false;
 	public int[] tileSequence;
+	public GameObject vehicle;
 	public GameObject background;
 	public GameObject pianoColliderLeft;
 	public GameObject pianoColliderRight;
@@ -29,13 +31,19 @@ public class GenerateMap : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		GenerateMapTiles ();
+		if (!randomGeneration)
+			GenerateMapTiles ();
+		else
+			GenerateRandom();
+
 		GenerateBG ();
 	}
 	
 	// Update is called once per frame
-	void LateUpdate () {
-
+	void Update () {
+		if (randomGeneration && vehicle.transform.position.x > (currentPos - 20)) {
+			GenerateRandom();
+		}
 	}
 	
 	void GenerateMapTiles(){
@@ -93,6 +101,7 @@ public class GenerateMap : MonoBehaviour {
 		}
 	}
 
+	//Spawns 10 tiles at a time
 	void GenerateBG(){
 		for (int i = 0; i < tileSequence.Length; ++i) {
 			Instantiate(background, new Vector3( currentBGpos , -0.69f, 3.34f), Quaternion.identity);
@@ -100,6 +109,65 @@ public class GenerateMap : MonoBehaviour {
 		}
 	}
 
+	void GenerateRandom(){
 
-}
+		for (int i = 0; i < 10; ++i){
+			if(i == 0){ //makes sure you dont start off over a bottomless pit
+				Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+				currentPos = currentPos + 10;
+			} else{
+				int tile = Random.Range(0,9);
+				
+				switch(tile){
+				case 1: //Blank tile
+					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 2: //Pothole left lane
+					Instantiate(potHoleL, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 3: //Pothole right lane
+					Instantiate(potHoleR, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 4: //Enemy car left lane
+					Instantiate(enemyL, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 5: //Enemy car right lane
+					Instantiate(enemyR, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 6: //bottomless pit lane
+					Instantiate(bottomless, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 7: //Piano left lane
+					Instantiate(pianoColliderLeft, new Vector3( (currentPos - 15.0f) , 0.0f, 0.0f), Quaternion.identity);
+					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					pianoPos.Add(currentPos);
+					pianolane.Add (0);
+					currentPos = currentPos + 10;
+					break;
+				case 8: //Piano right lane
+					Instantiate(pianoColliderRight, new Vector3( (currentPos - 15.0f) , 0.0f, 0.0f), Quaternion.identity);
+					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					pianoPos.Add(currentPos);
+					pianolane.Add (1);	
+					currentPos = currentPos + 10;
+					break;
+				case 9: //Piano both lanes
+					Instantiate(pianoColliderBoth, new Vector3( (currentPos - 15.0f) , 0.0f, 0.0f), Quaternion.identity);
+					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				default:
+					break;
+					
+				}
+			}
+		}
+	}	
 
+}	

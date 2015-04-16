@@ -163,7 +163,8 @@ public class CarController : MonoBehaviour {
 			Debug.Log ("Collide Enemy");
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			Vector3 tempPos = new Vector3 (transform.position.x, transform.position.y - 1.0f, transform.position.z + 2.0f);
-			Instantiate (explosion, tempPos, transform.rotation);
+			GameObject clone = (GameObject)Instantiate (explosion, tempPos, transform.rotation);
+			Destroy (clone, 2.5f);
 			carCrash.Play ();
 			Destroy (other.gameObject);
 			//Hits Pothole or piano

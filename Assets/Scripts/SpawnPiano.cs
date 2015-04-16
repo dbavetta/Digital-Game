@@ -44,8 +44,8 @@ public class SpawnPiano : MonoBehaviour {
 	void CreatePiano2()
 	{
 		if (level == 1) {
-			Instantiate (piano1, new Vector3 (210, 10, rightL), Quaternion.identity);
-			Instantiate (piano1, new Vector3 (210, 10, leftL), Quaternion.identity);
+			//Instantiate (piano1, new Vector3 (210, 10, rightL), Quaternion.identity);
+			//Instantiate (piano1, new Vector3 (210, 10, leftL), Quaternion.identity);
 		} else if (level == 2) {
 			Instantiate (piano1, new Vector3 (70, 10, leftL), Quaternion.identity);
 		}

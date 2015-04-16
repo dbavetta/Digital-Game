@@ -13,15 +13,15 @@ public class Destroyer : MonoBehaviour {
 			return;
 		}
 		
-//		//Destroyes eveything else
-//			if (other.gameObject.transform.parent) {
-//				Debug.Log ("Collide Parent");
-//				Destroy (other.gameObject.transform.parent.gameObject);
-//			} 
-//			else {
-//				Debug.Log ("Collide Object");
-//				Destroy(other.gameObject);
-//			}
+		//Destroyes eveything else
+			if (other.gameObject.transform.parent) {
+				Debug.Log ("Collide Parent");
+				Destroy (other.gameObject.transform.parent.gameObject);
+			} 
+			else {
+				Debug.Log ("Collide Object");
+				Destroy(other.gameObject);
+			}
 	}
 
 	//Destroys on road obstacles (non triggers)
