@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class CarController : MonoBehaviour {
 	public Rigidbody rb;
 //---------------------------------------	
+	public GameObject piano;
 	//Coordinates
 	public float LeftLaneZ = 0.3f;
 	public float RightLaneZ = -2.0f;
@@ -33,7 +34,7 @@ public class CarController : MonoBehaviour {
 	public GameObject explosion;
 
 	//Sound effects
-	public AudioSource[] sounds;
+	//public AudioSource[] sounds;
 	public AudioSource carCrash;
 	public AudioSource potHoleCrash;
 	public AudioSource buttonPress;
@@ -60,11 +61,11 @@ public class CarController : MonoBehaviour {
 
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
-		sounds = GetComponents<AudioSource>();
-		carCrash = sounds[0];
-		potHoleCrash = sounds[1];
-		buttonPress = sounds [2];
-		pickUpCoin = sounds[3];
+		//sounds = GetComponents<AudioSource>();
+		//carCrash = sounds[0];
+		//potHoleCrash = sounds[1];
+		//buttonPress = sounds [2];
+		//pickUpCoin = sounds[3];
 		Coins = 0;
 	}
 	
@@ -90,12 +91,12 @@ public class CarController : MonoBehaviour {
 
 		buttonPress.Play ();
 		if ( inRightLane) { //In right lane
-			Debug.Log("Switching to left lane (X)");
+			//Debug.Log("Switching to left lane (X)");
 			moveLeft = true; //Sets move left as objective 
 			moveRight = false; //Disables the option to move right
 		}
 		else if ( !inRightLane){ //In left lane
-			Debug.Log("Switching to right lane (X)");
+			//Debug.Log("Switching to right lane (X)");
 			moveRight = true; //Sets move right as objective
 			moveLeft = false; //Disables the option to move left
 		}
@@ -165,24 +166,24 @@ public class CarController : MonoBehaviour {
 			Instantiate (explosion, tempPos, transform.rotation);
 			carCrash.Play ();
 			Destroy (other.gameObject);
-		//Hits Pothole or piano
+			//Hits Pothole or piano
 		} else if (other.tag == "Obstacle") {
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			potHoleCrash.Play ();
 			Debug.Log ("Collide Obstacle");
-		//Hits coin
+			//Hits coin
 		} else if (other.tag == "Coin") {
-			Debug.Log("Coin hit");
-			pickUpCoin.Play();
+			Debug.Log ("Coin hit");
+			pickUpCoin.Play ();
 			Coins++;
 			SaveCoins ();
-			Destroy(other.gameObject);
-		//Reaches the end of the level
+			Destroy (other.gameObject);
+			//Reaches the end of the level
 		} else if (other.tag == "End Stage") {
 			//Sets coin values
-			SaveCoins();
+			SaveCoins ();
 			int LevelCoins = CarController.Coins; //Coins obtained from current level
-			int TotalCoinsSaved = PlayerPrefs.GetInt("Coins"); //All previously obtained coins
+			int TotalCoinsSaved = PlayerPrefs.GetInt ("Coins"); //All previously obtained coins
 
 			//UI Labels
 			EndStagePanel.SetActive (true);
@@ -192,10 +193,21 @@ public class CarController : MonoBehaviour {
 			totalCoins.text = "Total Coins: " + TotalCoinsSaved;
 
 			Time.timeScale = 0;
-		} 
-	}
+		//Spawns pianos (lol this is a terrible way to do it but it works)
+		} else if (other.tag == "Piano Collider Left") {
+			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, 0.3f), Quaternion.identity);
+			Debug.Log ("Collide Obstacle");
+		} else if (other.tag == "Piano Collider Right") {
+			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, -1.5f), Quaternion.identity);
+			Debug.Log ("Collide Obstacle");
+		} else if (other.tag == "Piano Collider Both") {
+			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, 0.3f), Quaternion.identity);
+			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, -1.5f), Quaternion.identity);
+			Debug.Log ("Collide Obstacle");
+		}
+}
 
-	//Saves all obtained coins
+//Saves all obtained coins
 	void SaveCoins(){
 
 		//Saves the overall coin count in memory
@@ -213,7 +225,7 @@ public class CarController : MonoBehaviour {
 			inAir = false;
 			movingDown = false;
 		}
-		Debug.Log ("Coll2: " + inAir);
+		//Debug.Log ("Coll2: " + inAir);
 
 	}
 
