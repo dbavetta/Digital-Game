@@ -59,6 +59,8 @@ public class CarController : MonoBehaviour {
 		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
 		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
 
+		EndStagePanel.SetActive(false);
+
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
 		//sounds = GetComponents<AudioSource>();
