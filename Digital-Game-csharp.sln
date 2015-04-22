@@ -29,10 +29,14 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 																																																									GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																													GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
+=======
+																																																						GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> parent of 184f351... Added 2 new playable cars to each level
 =======
 																					GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
