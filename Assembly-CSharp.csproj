@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Destroyer.cs" />
      <Compile Include="Assets\Scripts\FallingObject.cs" />
      <Compile Include="Assets\Scripts\GenerateMap.cs" />
+     <Compile Include="Assets\Scripts\Menu\BackToMenuValue.cs" />
      <Compile Include="Assets\Scripts\Menu\StartMenu.cs" />
      <Compile Include="Assets\Scripts\Menu\SwipeControl.cs" />
      <Compile Include="Assets\Scripts\Menu\SwipeDetector.cs" />
