@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: e50df58b2d6444ecd9f4d47a76fa990d
+timeCreated: 1429588086
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Coupe-00000
+    21300002: Coupe-00001
+    21300004: Coupe-00002
+    21300006: Coupe-00003
+    21300008: Coupe-00004
+    21300010: Coupe-00005
+    21300012: Coupe-00006
+    21300014: Coupe-00007
+    21300016: Coupe-00008
+    21300018: Coupe-00009
+    21300020: Coupe-00010
+    21300022: Coupe-00011
+    21300024: Coupe-00012
+    21300026: Coupe-00013
+    21300028: Coupe-00014
+    21300030: Coupe-00015
+    21300032: Coupe-00016
+    21300034: Coupe-00017
+    21300036: Coupe-00018
+    21300038: Coupe-00019
+    21300040: Coupe-00020
+    21300042: Coupe-00021
+    21300044: Coupe-00022
+    21300046: Coupe-00023
+    21300048: Coupe-00024
+    21300050: Coupe-00025
+    21300052: Coupe-00026
+    21300054: Coupe-00027
+    21300056: Coupe-00028
+    21300058: Coupe-00029
+    21300060: Coupe-00030
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 4096
+    textureFormat: -3
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: Coupe-00000
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1822
+        width: 566
+        height: 224
+      alignment: 9
+      pivot: {x: .505300343, y: .571428597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00001
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 1821
+        width: 566
+        height: 225
+      alignment: 9
+      pivot: {x: .505300343, y: .573333323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00002
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 1821
+        width: 566
+        height: 225
+      alignment: 9
+      pivot: {x: .505300343, y: .573333323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00003
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 1820
+        width: 567
+        height: 226
+      alignment: 9
+      pivot: {x: .506172836, y: .57079649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00004
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 1820
+        width: 568
+        height: 226
+      alignment: 9
+      pivot: {x: .505281687, y: .57079649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00005
+      rect:
+        serializedVersion: 2
+        x: 2845
+        y: 1819
+        width: 569
+        height: 227
+      alignment: 9
+      pivot: {x: .50615114, y: .568281949}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00006
+      rect:
+        serializedVersion: 2
+        x: 3416
+        y: 1818
+        width: 570
+        height: 228
+      alignment: 9
+      pivot: {x: .507017553, y: .565789461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00007
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1587
+        width: 572
+        height: 229
+      alignment: 9
+      pivot: {x: .506992996, y: .563318789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00008
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1585
+        width: 573
+        height: 231
+      alignment: 9
+      pivot: {x: .506108224, y: .558441579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00009
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 1584
+        width: 575
+        height: 232
+      alignment: 9
+      pivot: {x: .506086946, y: .556034505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00010
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1583
+        width: 576
+        height: 233
+      alignment: 9
+      pivot: {x: .506944418, y: .553648055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00011
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 1582
+        width: 577
+        height: 234
+      alignment: 9
+      pivot: {x: .50779897, y: .551282048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00012
+      rect:
+        serializedVersion: 2
+        x: 2885
+        y: 1582
+        width: 578
+        height: 234
+      alignment: 9
+      pivot: {x: .506920397, y: .551282048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00013
+      rect:
+        serializedVersion: 2
+        x: 3465
+        y: 1581
+        width: 579
+        height: 235
+      alignment: 9
+      pivot: {x: .507772028, y: .548936188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00014
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1344
+        width: 579
+        height: 235
+      alignment: 9
+      pivot: {x: .507772028, y: .548936188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00015
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1345
+        width: 579
+        height: 234
+      alignment: 9
+      pivot: {x: .507772028, y: .547008574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00016
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1344
+        width: 579
+        height: 235
+      alignment: 9
+      pivot: {x: .507772028, y: .548936188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00017
+      rect:
+        serializedVersion: 2
+        x: 1745
+        y: 1344
+        width: 579
+        height: 235
+      alignment: 9
+      pivot: {x: .507772028, y: .548936188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00018
+      rect:
+        serializedVersion: 2
+        x: 2326
+        y: 1345
+        width: 578
+        height: 234
+      alignment: 9
+      pivot: {x: .506920397, y: .551282048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00019
+      rect:
+        serializedVersion: 2
+        x: 2906
+        y: 1345
+        width: 577
+        height: 234
+      alignment: 9
+      pivot: {x: .50779897, y: .551282048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00020
+      rect:
+        serializedVersion: 2
+        x: 3485
+        y: 1346
+        width: 576
+        height: 233
+      alignment: 9
+      pivot: {x: .506944418, y: .553648055}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00021
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1110
+        width: 575
+        height: 232
+      alignment: 9
+      pivot: {x: .506086946, y: .556034505}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00022
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1111
+        width: 573
+        height: 231
+      alignment: 9
+      pivot: {x: .506108224, y: .558441579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00023
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 1113
+        width: 572
+        height: 229
+      alignment: 9
+      pivot: {x: .506992996, y: .563318789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00024
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 1114
+        width: 570
+        height: 228
+      alignment: 9
+      pivot: {x: .507017553, y: .565789461}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00025
+      rect:
+        serializedVersion: 2
+        x: 2300
+        y: 1115
+        width: 569
+        height: 227
+      alignment: 9
+      pivot: {x: .50615114, y: .568281949}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00026
+      rect:
+        serializedVersion: 2
+        x: 2871
+        y: 1116
+        width: 568
+        height: 226
+      alignment: 9
+      pivot: {x: .505281687, y: .57079649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00027
+      rect:
+        serializedVersion: 2
+        x: 3441
+        y: 1116
+        width: 567
+        height: 226
+      alignment: 9
+      pivot: {x: .506172836, y: .57079649}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00028
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 883
+        width: 566
+        height: 225
+      alignment: 9
+      pivot: {x: .505300343, y: .573333323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00029
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 883
+        width: 566
+        height: 225
+      alignment: 9
+      pivot: {x: .505300343, y: .573333323}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Coupe-00030
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 884
+        width: 566
+        height: 224
+      alignment: 9
+      pivot: {x: .505300343, y: .571428597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

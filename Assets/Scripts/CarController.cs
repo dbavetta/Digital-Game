@@ -59,8 +59,6 @@ public class CarController : MonoBehaviour {
 		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
 		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
 
-		//EndStagePanel.SetActive(false);
-
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
 		//sounds = GetComponents<AudioSource>();
@@ -159,12 +157,7 @@ public class CarController : MonoBehaviour {
 	
 	//Handles All Collisions
 	void OnTriggerEnter(Collider other){
-
-		 if (other.tag == "Bottom Destroy") 
-		{
-			for( int i = 0; i < HealthWrenches.GetComponent<Health> ().HealthImage.Length; i++)
-			HealthWrenches.GetComponent<Health> ().looseHealth ();
-		}
+		
 		//Hits Car
 		if (other.tag == "Enemy") {
 			Debug.Log ("Collide Enemy");
@@ -192,8 +185,6 @@ public class CarController : MonoBehaviour {
 			SaveCoins ();
 			int LevelCoins = CarController.Coins; //Coins obtained from current level
 			int TotalCoinsSaved = PlayerPrefs.GetInt ("Coins"); //All previously obtained coins
-
-
 
 			//UI Labels
 			EndStagePanel.SetActive (true);
