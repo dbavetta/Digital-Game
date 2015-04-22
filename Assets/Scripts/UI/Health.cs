@@ -26,7 +26,10 @@ public class Health : MonoBehaviour {
 
 		//lvlCoins.enabled = false;
 	}
-	
+	void Awake()
+	{
+		DontDestroyOnLoad(GameObject.Find("BackToMenuValueObject"));
+	}
 	// Update is called once per frame
 	void Update () 
 	{
