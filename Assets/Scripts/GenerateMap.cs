@@ -13,6 +13,9 @@ public class GenerateMap : MonoBehaviour {
 	public GameObject pianoColliderLeft;
 	public GameObject pianoColliderRight;
 	public GameObject pianoColliderBoth;
+	public GameObject SpikeL;
+	public GameObject SpikeR;
+	public GameObject SpikeB;
 	public GameObject road;
 	public GameObject potHoleL;
 	public GameObject potHoleR;
@@ -94,6 +97,18 @@ public class GenerateMap : MonoBehaviour {
 					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
 					currentPos = currentPos + 10;
 					break;
+				case 10: //Spike left lane
+					Instantiate(SpikeL, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 11: //Spike right lane
+					Instantiate(SpikeR, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 12: //Spike both lanes
+					Instantiate(SpikeB, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
 				default:
 					break;
 
@@ -116,7 +131,7 @@ public class GenerateMap : MonoBehaviour {
 				Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
 				currentPos = currentPos + 10;
 			} else{
-				int tile = Random.Range(0,9);
+				int tile = Random.Range(0,12);
 				
 				switch(tile){
 				case 1: //Blank tile
@@ -162,7 +177,21 @@ public class GenerateMap : MonoBehaviour {
 					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
 					currentPos = currentPos + 10;
 					break;
+				case 10: //Spike left lane
+					Instantiate(SpikeL, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 11: //Spike right lane
+					Instantiate(SpikeR, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
+				case 12: //Spike both lanes
+					Instantiate(SpikeB, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
+					break;
 				default:
+					Instantiate(road, new Vector3(currentPos, 0.0f, 0.0f), Quaternion.identity);
+					currentPos = currentPos + 10;
 					break;
 					
 				}
