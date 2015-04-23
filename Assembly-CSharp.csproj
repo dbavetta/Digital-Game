@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\SpawnPiano.cs" />
      <Compile Include="Assets\Scripts\UI\BackToMenu.cs" />
      <Compile Include="Assets\Scripts\UI\Health.cs" />
+     <Compile Include="Assets\SpikeTrap.cs" />
      <None Include="Assets\PorglezompPyroclastics\Explosion.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\PorglezompPyroclastics\README.txt" />
