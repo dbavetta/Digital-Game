@@ -23,7 +23,7 @@ public class Health : MonoBehaviour {
 		
 		EndStageTextWin.SetActive(false);	
 		EndStageTextLose.SetActive(false);
-		EndStagePanel.SetActive(false);
+
 		//lvlCoins.enabled = false;
 	}
 	

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Pause : MonoBehaviour {
 	GameObject PauseMenu; 
+	GameObject BackToMenuObject;
 	// Use this for initialization
 	void Start () 
 	{
@@ -24,6 +25,14 @@ public class Pause : MonoBehaviour {
 	{
 		PauseMenu.SetActive(false);
 		Time.timeScale = 1;
+	}
+
+	public void GoToMenu()
+	{
+
+		GameObject.Find("BackToMenuValueObject").GetComponent<BackToMenuValue>().MenuValue = 1;
+
+		Application.LoadLevel(0);
 	}
 
 }

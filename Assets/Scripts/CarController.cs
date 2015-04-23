@@ -59,6 +59,8 @@ public class CarController : MonoBehaviour {
 		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
 		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
 
+		EndStagePanel.SetActive(false);
+
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
 		//sounds = GetComponents<AudioSource>();
@@ -180,14 +182,15 @@ public class CarController : MonoBehaviour {
 			SaveCoins ();
 			Destroy (other.gameObject);
 			//Reaches the end of the level
-		} else if (other.tag == "End Stage") {
+		} else if (other.tag == "Stage End") {
+
 			//Sets coin values
 			SaveCoins ();
 			int LevelCoins = CarController.Coins; //Coins obtained from current level
 			int TotalCoinsSaved = PlayerPrefs.GetInt ("Coins"); //All previously obtained coins
 
 			//UI Labels
-			EndStagePanel.SetActive (true);
+			EndStagePanel.SetActive(true);
 			lvlCoins.enabled = true;
 			totalCoins.enabled = true;
 			lvlCoins.text = "Coins Obtained: " + LevelCoins;
