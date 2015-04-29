@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class GenerateMap : MonoBehaviour {
 
 	public bool randomGeneration = false;
+	public AudioSource LevelMusic;
 	public int[] tileSequence;
 	public GameObject vehicle;
 	public GameObject background;
@@ -22,6 +23,11 @@ public class GenerateMap : MonoBehaviour {
 	public GameObject enemyL;
 	public GameObject enemyR;
 	public GameObject bottomless;
+
+	GameObject jumpButton;
+	GameObject switchButton;
+	GameObject jumpInv;
+	GameObject switchInv;
 	
 	List<int> pianoPos = new List<int>();
 	List<int> pianolane = new List<int>();
@@ -33,6 +39,25 @@ public class GenerateMap : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		LevelMusic.volume = PlayerPrefs.GetFloat ("MusicVolume");
+
+		jumpButton = GameObject.Find("Jump");
+		switchButton = GameObject.Find("Switch");
+		jumpInv = GameObject.Find("JumpInverse");
+		switchInv = GameObject.Find("SwitchInverse");
+
+		if (PlayerPrefs.GetInt ("InvertControls") == 1) {
+			jumpButton.SetActive(false);
+			switchButton.SetActive(false);
+			jumpInv.SetActive(true);
+			switchInv.SetActive(true);
+		} else {
+			jumpButton.SetActive(true);
+			switchButton.SetActive(true);
+			jumpInv.SetActive(false);
+			switchInv.SetActive(false);
+		}
 
 		if (!randomGeneration)
 			GenerateMapTiles ();

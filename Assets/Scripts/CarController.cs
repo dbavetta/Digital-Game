@@ -73,18 +73,18 @@ public class CarController : MonoBehaviour {
 
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
-		//sounds = GetComponents<AudioSource>();
-		//carCrash = sounds[0];
-		//potHoleCrash = sounds[1];
-		//buttonPress = sounds [2];
-		//pickUpCoin = sounds[3];
 		Coins = 0;
+
+		carCrash.volume = PlayerPrefs.GetFloat ("SfxVolume");
+		potHoleCrash.volume = PlayerPrefs.GetFloat ("SfxVolume");
+		pickUpCoin.volume = PlayerPrefs.GetFloat ("SfxVolume");
+		buttonPress.volume = PlayerPrefs.GetFloat ("SfxVolume");
 	}
 	
 	void Update(){
 
 		GUICoins.text = ": " + Coins;
-		BackToMenu.GetComponent<BackToMenuValue>().CoinValue = PlayerPrefs.GetInt("Coins");
+		BackToMenu.GetComponent<BackToMenuValue>().CoinValue = PlayerPrefs.GetInt("Coins"); //Something wrong with this
 		//FallingSpeed ();
 		//InitLaneSwitch ();
 		SwitchLanes ();

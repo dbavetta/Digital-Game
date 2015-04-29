@@ -9,6 +9,7 @@ public class StartMenu : MonoBehaviour {
 	GameObject LoadingScreenPanel;
 	GameObject StagePanel;
 	GameObject StorePanel;
+	GameObject OptionsPanel;
 	GameObject BackToMenu;
 	Animator anim;
 	int levelSelected;
@@ -29,6 +30,7 @@ public class StartMenu : MonoBehaviour {
 		LoadingScreenPanel = GameObject.Find("Loading Screen Panel");
 		StagePanel = GameObject.Find("Stage Panels");
 		StorePanel = GameObject.Find("Store Panel");
+		OptionsPanel = GameObject.Find("Options Panel");
 		anim = GetComponent<Animator>();
 		
 		
@@ -38,6 +40,7 @@ public class StartMenu : MonoBehaviour {
 			StorePanel.SetActive(false);
 			InstructionPanel.SetActive(false);
 			StartPanel.SetActive(false);
+			OptionsPanel.SetActive(false);
 			StagePanel.SetActive(true);
 		}
 		else
@@ -46,6 +49,7 @@ public class StartMenu : MonoBehaviour {
 			StorePanel.SetActive(false);
 			LoadingScreenPanel.SetActive(false);
 			InstructionPanel.SetActive(false);
+			OptionsPanel.SetActive(false);
 			StartPanel.SetActive(true);
 		}
 	}
@@ -67,6 +71,7 @@ public class StartMenu : MonoBehaviour {
 	{
 		StartPanel.SetActive(false);
 		StagePanel.SetActive(false);
+		OptionsPanel.SetActive (false);
 		InstructionPanel.SetActive(true);
 	}
 	
@@ -75,16 +80,26 @@ public class StartMenu : MonoBehaviour {
 		InstructionPanel.SetActive(false);
 		StagePanel.SetActive(false);
 		StorePanel.SetActive(false);
+		OptionsPanel.SetActive (false);
 		StartPanel.SetActive(true);
 	}
 	public void goToStore()
 	{
 		StartPanel.SetActive(false);
+		OptionsPanel.SetActive (false);
 		StorePanel.SetActive(true);
+	}
+	public void goToOptions()
+	{
+		InstructionPanel.SetActive(false);
+		StartPanel.SetActive(false);
+		StorePanel.SetActive(false);
+		OptionsPanel.SetActive (true);
 	}
 	public void startTutorial()
 	{
 		StagePanel.SetActive(false);
+		OptionsPanel.SetActive (false);
 		LoadingScreenPanel.SetActive(true);
 		Application.LoadLevel(1);
 	}
