@@ -8,21 +8,21 @@ public class Health : MonoBehaviour {
 	GameObject EndStagePanel;
 	GameObject EndStageTextWin;
 	GameObject EndStageTextLose;
+
 	Text lvlCoins;
 	Text totalCoins;
 
 	// Use this for initialization
 	void Start () 
 	{
-		EndStageTextWin = GameObject.Find("You Win");
-		EndStageTextLose = GameObject.Find("You Lose");
 		EndStagePanel = GameObject.Find("End Stage Panel");
-		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
-		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
+		EndStagePanel = GameObject.Find("End Stage Panel");
+		EndStageTextWin = GameObject.Find("You Win");
+		//lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
+		//totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
 		healthCount = HealthImage.Length;
 		
-		EndStageTextWin.SetActive(false);	
-		EndStageTextLose.SetActive(false);
+
 
 		//lvlCoins.enabled = false;
 	}
@@ -44,12 +44,12 @@ public class Health : MonoBehaviour {
 		if (healthCount == 0)
 		{
 			EndStagePanel.SetActive(true);
-			EndStageTextLose.SetActive(true);
-			lvlCoins.enabled = true;
-			totalCoins.enabled = true;
+			GameObject.Find("Car Object").GetComponent<CarController>(). EndStageTextLose.SetActive(true);
+			GameObject.Find("Car Object").GetComponent<CarController>().lvlCoins.enabled = true;
+			GameObject.Find("Car Object").GetComponent<CarController>().totalCoins.enabled = true;
 			int coins = CarController.Coins;
-			lvlCoins.text = "Coins Obtained : " + coins;
-			totalCoins.text = "Total Coins: " + PlayerPrefs.GetInt("Coins");
+			GameObject.Find("Car Object").GetComponent<CarController>().lvlCoins.text = "Coins Obtained : " + coins;
+			GameObject.Find("Car Object").GetComponent<CarController>().totalCoins.text = "Total Coins: " + PlayerPrefs.GetInt("Coins");
 			Time.timeScale = 0;
 		}
 	}

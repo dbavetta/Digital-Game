@@ -8,6 +8,8 @@ public class StartMenu : MonoBehaviour {
 	GameObject InstructionPanel;
 	GameObject LoadingScreenPanel;
 	GameObject StagePanel;
+	GameObject StorePanel;
+	GameObject BackToMenu;
 	Animator anim;
 	int levelSelected;
 	// Use this for initialization
@@ -22,15 +24,18 @@ public class StartMenu : MonoBehaviour {
 		
 		
 		StartPanel = GameObject.Find("Start Panel");
+		BackToMenu = GameObject.Find("BackToMenuValueObject");
 		InstructionPanel = GameObject.Find("Instruction Panel");
 		LoadingScreenPanel = GameObject.Find("Loading Screen Panel");
 		StagePanel = GameObject.Find("Stage Panels");
+		StorePanel = GameObject.Find("Store Panel");
 		anim = GetComponent<Animator>();
 		
 		
 		if(GameObject.Find("BackToMenuValueObject").GetComponent<BackToMenuValue>().MenuValue == 1)
 		{
 			LoadingScreenPanel.SetActive(false);
+			StorePanel.SetActive(false);
 			InstructionPanel.SetActive(false);
 			StartPanel.SetActive(false);
 			StagePanel.SetActive(true);
@@ -38,6 +43,7 @@ public class StartMenu : MonoBehaviour {
 		else
 		{
 			StagePanel.SetActive(false);
+			StorePanel.SetActive(false);
 			LoadingScreenPanel.SetActive(false);
 			InstructionPanel.SetActive(false);
 			StartPanel.SetActive(true);
@@ -47,7 +53,7 @@ public class StartMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		BackToMenu.GetComponent<BackToMenuValue>().CoinValue = PlayerPrefs.GetInt("Coins");
 	}
 	
 	public void goToStageSelect()
@@ -68,7 +74,13 @@ public class StartMenu : MonoBehaviour {
 	{
 		InstructionPanel.SetActive(false);
 		StagePanel.SetActive(false);
+		StorePanel.SetActive(false);
 		StartPanel.SetActive(true);
+	}
+	public void goToStore()
+	{
+		StartPanel.SetActive(false);
+		StorePanel.SetActive(true);
 	}
 	public void startTutorial()
 	{

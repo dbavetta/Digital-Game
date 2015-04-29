@@ -1,20 +1,14 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\Health.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Menu\StoreMenu.cs">
     <Files>
-      <File FileName="..\Digital-Game Copy\Scripts\Pause.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Pause.cs" Line="33" Column="1" />
-      <File FileName="Assets\Scripts\Menu\SwipeControl.cs" Line="17" Column="1" />
-      <File FileName="Assets\Scripts\UI\Health.cs" Line="57" Column="1" />
-      <File FileName="Assets\Scripts\CarController.cs" Line="62" Column="34" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CarController.cs">
-    <Files>
-      <File FileName="Assets/Scripts/UI/Health.cs" Line="49" Column="1" />
-      <File FileName="Assets/Scripts/CarController.cs" Line="62" Column="5" />
->>>>>>> origin/master
+      <File FileName="Assets\Scripts\Menu\StoreMenu.cs" Line="94" Column="110" />
+      <File FileName="Assets\Scripts\Menu\StartMenu.cs" Line="27" Column="57" />
+      <File FileName="Assets\Scripts\CarController.cs" Line="118" Column="28" />
+      <File FileName="Assets\Scripts\Menu\BackToMenuValue.cs" Line="12" Column="44" />
+      <File FileName="Assets\Scripts\UI\Health.cs" Line="52" Column="96" />
+      <File FileName="D:\Downloads\LoadCar.cs" Line="28" Column="10" />
+      <File FileName="Assets\Scripts\LoadCar.cs" Line="31" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

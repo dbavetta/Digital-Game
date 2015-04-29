@@ -42,24 +42,34 @@ public class CarController : MonoBehaviour {
 
 	//Health Reference Object
 	GameObject HealthWrenches;
-	GameObject EndStagePanel;
+	public GameObject EndStagePanel;
+	public GameObject EndStageTextWin;
+	public GameObject EndStageTextLose;
+
+	//Other Reference Objects
+	GameObject BackToMenu;
 
 	//Coin Varibales
 	public static int Coins;
 	Text GUICoins;
-	Text lvlCoins;
-	Text totalCoins;
+	public Text lvlCoins;
+	public Text totalCoins;
 
 //---------------------------------------
 
 	void Start () {
 		HealthWrenches = GameObject.Find("Health Wrenches");
 		EndStagePanel = GameObject.Find("End Stage Panel");
+		EndStageTextWin = GameObject.Find("You Win");
+		EndStageTextLose = GameObject.Find("You Lose");
 		GUICoins = GameObject.Find("Coin Count").GetComponent<Text>();
 		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
 		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
+		BackToMenu = GameObject.Find("BackToMenuValueObject");
 
 		EndStagePanel.SetActive(false);
+		EndStageTextWin.SetActive(false);	
+		EndStageTextLose.SetActive(false);
 
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
@@ -74,6 +84,7 @@ public class CarController : MonoBehaviour {
 	void Update(){
 
 		GUICoins.text = ": " + Coins;
+		BackToMenu.GetComponent<BackToMenuValue>().CoinValue = PlayerPrefs.GetInt("Coins");
 		//FallingSpeed ();
 		//InitLaneSwitch ();
 		SwitchLanes ();
