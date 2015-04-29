@@ -9,7 +9,7 @@ public class BackToMenuValue : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		for(int i = 0; i <= boughtCar.Length; i++)
+		for(int i = 0; i <= boughtCar.Length - 1; i++)
 		{
 			boughtCar[i] = false;
 		}
