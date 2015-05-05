@@ -53,4 +53,9 @@ public class Health : MonoBehaviour {
 			Time.timeScale = 0;
 		}
 	}
+
+	public int GetHealth(){
+
+		return healthCount;
+	}
 }

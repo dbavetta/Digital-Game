@@ -55,6 +55,14 @@ public class CarController : MonoBehaviour {
 	public Text lvlCoins;
 	public Text totalCoins;
 
+	public Text Level_Score;
+	public Text High_Score;
+
+	private int currentScore = 0;
+
+
+	private int levelDistance = 0; //distance reached by car during level
+
 //---------------------------------------
 
 	void Start () {
@@ -65,6 +73,8 @@ public class CarController : MonoBehaviour {
 		GUICoins = GameObject.Find("Coin Count").GetComponent<Text>();
 		lvlCoins = GameObject.Find("LevelCoins").GetComponent<Text>();
 		totalCoins = GameObject.Find("TotalCoins").GetComponent<Text>();
+		Level_Score = GameObject.Find("LevelScore").GetComponent<Text>();
+		High_Score = GameObject.Find("HighScore").GetComponent<Text>();
 		BackToMenu = GameObject.Find("BackToMenuValueObject");
 
 		EndStagePanel.SetActive(false);
@@ -79,6 +89,11 @@ public class CarController : MonoBehaviour {
 		potHoleCrash.volume = PlayerPrefs.GetFloat ("SfxVolume");
 		pickUpCoin.volume = PlayerPrefs.GetFloat ("SfxVolume");
 		buttonPress.volume = PlayerPrefs.GetFloat ("SfxVolume");
+
+		//Resets these each time the level is loaded
+		PlayerPrefs.SetInt ("EndCarPositionOnLevel", 0);
+		PlayerPrefs.SetInt ("CoinsForScore", 0);
+		PlayerPrefs.SetInt ("HealthRemainingForScore", 0);
 	}
 	
 	void Update(){
@@ -88,6 +103,12 @@ public class CarController : MonoBehaviour {
 		//FallingSpeed ();
 		//InitLaneSwitch ();
 		SwitchLanes ();
+
+		levelDistance = (int)transform.position.x;
+		Health healthRemaining = GetComponent<Health> ();
+		int hr = healthRemaining.GetHealth ();
+		currentScore = (levelDistance + (Coins * 5) + (hr * 10));
+		GetHighScore();
 	}
 	
 	void FixedUpdate () {
@@ -180,11 +201,13 @@ public class CarController : MonoBehaviour {
 			Destroy (clone, 2.5f);
 			carCrash.Play ();
 			Destroy (other.gameObject);
+			GetHighScore();
 			//Hits Pothole or piano
 		} else if (other.tag == "Obstacle") {
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			potHoleCrash.Play ();
 			Debug.Log ("Collide Obstacle");
+			GetHighScore();
 			//Hits coin
 		} else if (other.tag == "Coin") {
 			Debug.Log ("Coin hit");
@@ -192,13 +215,16 @@ public class CarController : MonoBehaviour {
 			Coins++;
 			SaveCoins ();
 			Destroy (other.gameObject);
+			GetHighScore();
 			//Reaches the end of the level
 		} else if (other.tag == "Stage End") {
-
+			Debug.Log("hit end");
 			//Sets coin values
 			SaveCoins ();
 			int LevelCoins = CarController.Coins; //Coins obtained from current level
 			int TotalCoinsSaved = PlayerPrefs.GetInt ("Coins"); //All previously obtained coins
+
+			GetHighScore();
 
 			//UI Labels
 			EndStagePanel.SetActive(true);
@@ -207,8 +233,12 @@ public class CarController : MonoBehaviour {
 			lvlCoins.text = "Coins Obtained: " + LevelCoins;
 			totalCoins.text = "Total Coins: " + TotalCoinsSaved;
 
+			string tempScoreName = "Highscore_L" + (Application.loadedLevel-1); //Dynamically gets level name
+			Level_Score.text = "Level Score: " + currentScore;
+			High_Score.text = "High Score: " + PlayerPrefs.GetInt(tempScoreName);
+
 			Time.timeScale = 0;
-		//Spawns pianos (lol this is a terrible way to do it but it works)
+		//Spawns pianos 
 		} else if (other.tag == "Piano Collider Left") {
 			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, 0.3f), Quaternion.identity);
 			Debug.Log ("Collide Obstacle");
@@ -226,7 +256,7 @@ public class CarController : MonoBehaviour {
 	void SaveCoins(){
 
 		//Saves the overall coin count in memory
-		if (PlayerPrefs.GetInt ("Coins") == null) {
+		if (PlayerPrefs.HasKey("Coins") == false) {
 			PlayerPrefs.SetInt ("Coins", Coins);
 		}else{
 			PlayerPrefs.SetInt("Coins", PlayerPrefs.GetInt("Coins") + Coins); 
@@ -258,5 +288,14 @@ public class CarController : MonoBehaviour {
 			HealthWrenches.GetComponent<Health>().looseHealth();
 			Destroy (collision.gameObject);
 		}
+	}
+
+	public void GetHighScore(){
+	
+		//Coins
+		int currentLevel = (Application.loadedLevel) -1;
+		//levelDistance
+		int healthRemaining = GetComponent<Health> ().GetHealth();
+		GetComponent<HighScores> ().CalculateHighscore(currentLevel, levelDistance, Coins, healthRemaining);
 	}
 }

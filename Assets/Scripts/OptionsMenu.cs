@@ -9,15 +9,29 @@ public class OptionsMenu : MonoBehaviour {
 
 	int isInverted = 0; //0 means false 1 means true
 	// Use this for initialization
-	void Start () {
-
-		musicSlider.value = PlayerPrefs.GetFloat ("MusicVolume");
-		sfxSlider.value = PlayerPrefs.GetFloat ("SfxVolume");
-		if (PlayerPrefs.GetInt ("InvertControls") == 1) {
-			invertToggle.isOn = true;
+	void Awake () {
+		if (PlayerPrefs.HasKey ("MusicVolume")) {
+			musicSlider.value = PlayerPrefs.GetFloat ("MusicVolume");
 		} else {
-			invertToggle.isOn = false;
+			musicSlider.value = 0.3f;
 		}
+
+		if (PlayerPrefs.HasKey ("SfxVolume")) {
+			musicSlider.value = PlayerPrefs.GetFloat ("MusicVolume");
+		} else {
+			musicSlider.value = 0.17f;
+		}
+
+		if (PlayerPrefs.HasKey ("InvertControls")) {
+			if (PlayerPrefs.GetInt ("InvertControls") == 1) {
+				invertToggle.isOn = true;
+			} else {
+				invertToggle.isOn = false;
+			}
+		} else {
+			invertToggle.isOn = false;	
+		}
+
 	}
 	
 	// Update is called once per frame
@@ -35,6 +49,6 @@ public class OptionsMenu : MonoBehaviour {
 	}
 
 	public void NewGame(){
-
+		PlayerPrefs.DeleteAll ();
 	}
 }
