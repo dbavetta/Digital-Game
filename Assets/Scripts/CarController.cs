@@ -96,6 +96,7 @@ public class CarController : MonoBehaviour {
 	}
 	
 	void Start () {
+		transform.position =  new Vector3(0.0f,0.0f,-1.5f);
 		HealthWrenches = GameObject.Find("Health Wrenches");
 		EndStagePanel = GameObject.Find("End Stage Panel");
 		EndStageTextWin = GameObject.Find("You Win");
