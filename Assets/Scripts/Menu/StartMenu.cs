@@ -122,4 +122,7 @@ public class StartMenu : MonoBehaviour {
 		InstructionPanel.SetActive(false);
 		StagePanel.SetActive(false);
 	}
+	public void NewGame(){
+		PlayerPrefs.DeleteAll ();
+	}
 }

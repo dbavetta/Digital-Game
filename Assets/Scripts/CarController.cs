@@ -59,12 +59,42 @@ public class CarController : MonoBehaviour {
 	public Text High_Score;
 
 	private int currentScore = 0;
-
+	private int crashes = 0;
 
 	private int levelDistance = 0; //distance reached by car during level
 
 //---------------------------------------
 
+	void Awake () {
+		if (PlayerPrefs.HasKey ("Highscore_L1") == false) {
+			PlayerPrefs.SetInt ("Highscore_L1", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L2") == false) {
+			PlayerPrefs.SetInt ("Highscore_L2", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L3") == false) {
+			PlayerPrefs.SetInt ("Highscore_L3", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L4") == false) {
+			PlayerPrefs.SetInt ("Highscore_L4", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L5") == false) {
+			PlayerPrefs.SetInt ("Highscore_L5", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L6") == false) {
+			PlayerPrefs.SetInt ("Highscore_L6", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L7") == false) {
+			PlayerPrefs.SetInt ("Highscore_L7", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L8") == false) {
+			PlayerPrefs.SetInt ("Highscore_L8", 0);
+		}
+		if (PlayerPrefs.HasKey ("Highscore_L9") == false) {
+			PlayerPrefs.SetInt ("Highscore_L9", 0);
+		}
+	}
+	
 	void Start () {
 		HealthWrenches = GameObject.Find("Health Wrenches");
 		EndStagePanel = GameObject.Find("End Stage Panel");
@@ -84,6 +114,7 @@ public class CarController : MonoBehaviour {
 		GUICoins.text = ": " + Coins;
 		rb = GetComponent<Rigidbody>();
 		Coins = 0;
+		crashes = 0;
 
 		carCrash.volume = PlayerPrefs.GetFloat ("SfxVolume");
 		potHoleCrash.volume = PlayerPrefs.GetFloat ("SfxVolume");
@@ -94,10 +125,30 @@ public class CarController : MonoBehaviour {
 		PlayerPrefs.SetInt ("EndCarPositionOnLevel", 0);
 		PlayerPrefs.SetInt ("CoinsForScore", 0);
 		PlayerPrefs.SetInt ("HealthRemainingForScore", 0);
+
+		int car = PlayerPrefs.GetInt("CurrentCar");
+		switch(car){
+		case 1:
+			MaxSpeed = 6;
+			jumpForce = 6.5f;
+			break;
+		case 2:
+			//coupe
+			jumpForce = 7;
+			MaxSpeed = 5.7f;
+			break;
+		case 3:
+			//sport
+			jumpForce = 6.5f;
+			MaxSpeed = 6;
+			break;
+		default:
+			break;	
+		}//end switch
 	}
 	
 	void Update(){
-
+		
 		GUICoins.text = ": " + Coins;
 		BackToMenu.GetComponent<BackToMenuValue>().CoinValue = PlayerPrefs.GetInt("Coins"); //Something wrong with this
 		//FallingSpeed ();
@@ -105,10 +156,13 @@ public class CarController : MonoBehaviour {
 		SwitchLanes ();
 
 		levelDistance = (int)transform.position.x;
-		Health healthRemaining = GetComponent<Health> ();
-		int hr = healthRemaining.GetHealth ();
-		currentScore = (levelDistance + (Coins * 5) + (hr * 10));
+		//Health healthRemaining = GetComponent<Health> ();
+		//int hr = healthRemaining.GetHealth ();
+		currentScore = (levelDistance + (Coins * 5) + ((5 - crashes) * 10));
 		GetHighScore();
+		string tempScoreName = "Highscore_L" + (Application.loadedLevel-1); //Dynamically gets level name
+		Level_Score.text = "Level Score: " + currentScore;
+		High_Score.text = "High Score: " + PlayerPrefs.GetInt(tempScoreName);
 	}
 	
 	void FixedUpdate () {
@@ -195,6 +249,7 @@ public class CarController : MonoBehaviour {
 		//Hits Car
 		if (other.tag == "Enemy") {
 			Debug.Log ("Collide Enemy");
+			crashes++;
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			Vector3 tempPos = new Vector3 (transform.position.x, transform.position.y - 1.0f, transform.position.z + 2.0f);
 			GameObject clone = (GameObject)Instantiate (explosion, tempPos, transform.rotation);
@@ -204,6 +259,7 @@ public class CarController : MonoBehaviour {
 			GetHighScore();
 			//Hits Pothole or piano
 		} else if (other.tag == "Obstacle") {
+			crashes++;
 			HealthWrenches.GetComponent<Health> ().looseHealth ();
 			potHoleCrash.Play ();
 			Debug.Log ("Collide Obstacle");
@@ -228,6 +284,7 @@ public class CarController : MonoBehaviour {
 
 			//UI Labels
 			EndStagePanel.SetActive(true);
+			EndStageTextWin.SetActive(true);
 			lvlCoins.enabled = true;
 			totalCoins.enabled = true;
 			lvlCoins.text = "Coins Obtained: " + LevelCoins;
@@ -295,7 +352,51 @@ public class CarController : MonoBehaviour {
 		//Coins
 		int currentLevel = (Application.loadedLevel) -1;
 		//levelDistance
-		int healthRemaining = GetComponent<Health> ().GetHealth();
-		GetComponent<HighScores> ().CalculateHighscore(currentLevel, levelDistance, Coins, healthRemaining);
+		//int healthRemaining = GetComponent<Health> ().GetHealth();
+		CalculateHighscore(currentLevel, levelDistance, Coins, (5 - crashes));
+	}
+
+	public void CalculateHighscore(int levelnumber, int distance, int coins, int health_remaining){
+		
+		int Score = distance + (coins * 5) + (health_remaining * 10);
+		
+		switch (levelnumber) {
+		case 1:
+			if(Score > PlayerPrefs.GetInt("Highscore_L1")){
+				PlayerPrefs.SetInt ("Highscore_L1", Score);} 
+			break;
+		case 2:
+			if(Score > PlayerPrefs.GetInt("Highscore_L2")){
+				PlayerPrefs.SetInt ("Highscore_L2", Score);} 
+			break;
+		case 3:
+			if(Score > PlayerPrefs.GetInt("Highscore_L3")){
+				PlayerPrefs.SetInt ("Highscore_L3", Score);} 
+			break;
+		case 4:
+			if(Score > PlayerPrefs.GetInt("Highscore_L4")){
+				PlayerPrefs.SetInt ("Highscore_L4", Score);} 
+			break;
+		case 5:
+			if(Score > PlayerPrefs.GetInt("Highscore_L5")){
+				PlayerPrefs.SetInt ("Highscore_L5", Score);} 
+			break;
+		case 6:
+			if(Score > PlayerPrefs.GetInt("Highscore_L6")){
+				PlayerPrefs.SetInt ("Highscore_L6", Score);} 
+			break;
+		case 7:
+			if(Score > PlayerPrefs.GetInt("Highscore_L7")){
+				PlayerPrefs.SetInt ("Highscore_L1", Score);} 
+			break;
+		case 8:
+			if(Score > PlayerPrefs.GetInt("Highscore_L8")){
+				PlayerPrefs.SetInt ("Highscore_L8", Score);} 
+			break;
+		case 9:
+			if(Score > PlayerPrefs.GetInt("Highscore_L9")){
+				PlayerPrefs.SetInt ("Highscore_L9", Score);} 
+			break;
+		}
 	}
 }
