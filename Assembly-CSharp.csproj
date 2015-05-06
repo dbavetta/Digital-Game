@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\SpawnController.cs" />
      <Compile Include="Assets\Scripts\SpawnPiano.cs" />
      <Compile Include="Assets\Scripts\UI\BackToMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\BugFix.cs" />
      <Compile Include="Assets\Scripts\UI\Health.cs" />
      <Compile Include="Assets\SpikeTrap.cs" />
      <None Include="Assets\PorglezompPyroclastics\Explosion.shader" />

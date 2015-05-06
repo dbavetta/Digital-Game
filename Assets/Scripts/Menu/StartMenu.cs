@@ -11,6 +11,7 @@ public class StartMenu : MonoBehaviour {
 	GameObject StorePanel;
 	GameObject OptionsPanel;
 	GameObject BackToMenu;
+	GameObject CreditsMenu;
 	Animator anim;
 	int levelSelected;
 	// Use this for initialization
@@ -31,6 +32,7 @@ public class StartMenu : MonoBehaviour {
 		StagePanel = GameObject.Find("Stage Panels");
 		StorePanel = GameObject.Find("Store Panel");
 		OptionsPanel = GameObject.Find("Options Panel");
+		CreditsMenu = GameObject.Find ("Credits");
 		anim = GetComponent<Animator>();
 		
 		
@@ -41,6 +43,7 @@ public class StartMenu : MonoBehaviour {
 			InstructionPanel.SetActive(false);
 			StartPanel.SetActive(false);
 			OptionsPanel.SetActive(false);
+			CreditsMenu.SetActive(false);
 			StagePanel.SetActive(true);
 		}
 		else
@@ -49,6 +52,7 @@ public class StartMenu : MonoBehaviour {
 			StorePanel.SetActive(false);
 			LoadingScreenPanel.SetActive(false);
 			InstructionPanel.SetActive(false);
+			CreditsMenu.SetActive(false);
 			OptionsPanel.SetActive(false);
 			StartPanel.SetActive(true);
 		}
@@ -63,6 +67,7 @@ public class StartMenu : MonoBehaviour {
 	public void goToStageSelect()
 	{
 		InstructionPanel.SetActive(false);
+		CreditsMenu.SetActive(false);
 		StartPanel.SetActive(false);
 		StagePanel.SetActive(true);
 		
@@ -73,6 +78,7 @@ public class StartMenu : MonoBehaviour {
 		StagePanel.SetActive(false);
 		OptionsPanel.SetActive (false);
 		InstructionPanel.SetActive(true);
+		CreditsMenu.SetActive(false);
 	}
 	
 	public void goToStart()
@@ -81,12 +87,14 @@ public class StartMenu : MonoBehaviour {
 		StagePanel.SetActive(false);
 		StorePanel.SetActive(false);
 		OptionsPanel.SetActive (false);
+		CreditsMenu.SetActive(false);
 		StartPanel.SetActive(true);
 	}
 	public void goToStore()
 	{
 		StartPanel.SetActive(false);
 		OptionsPanel.SetActive (false);
+		CreditsMenu.SetActive(false);
 		StorePanel.SetActive(true);
 	}
 	public void goToOptions()
@@ -94,7 +102,16 @@ public class StartMenu : MonoBehaviour {
 		InstructionPanel.SetActive(false);
 		StartPanel.SetActive(false);
 		StorePanel.SetActive(false);
+		CreditsMenu.SetActive(false);
 		OptionsPanel.SetActive (true);
+	}
+	public void goToCredits()
+	{
+		InstructionPanel.SetActive(false);
+		StartPanel.SetActive(false);
+		StorePanel.SetActive(false);
+		CreditsMenu.SetActive(true);
+		OptionsPanel.SetActive (false);
 	}
 	public void startTutorial()
 	{
@@ -116,11 +133,19 @@ public class StartMenu : MonoBehaviour {
 		LoadingScreenPanel.SetActive(true);
 		Application.LoadLevel(3);
 	}
+	public void startStage3()
+	{
+		StagePanel.SetActive(false);
+		LoadingScreenPanel.SetActive(true);
+		Application.LoadLevel(4);
+	}
 	public void goToStartMenuSlide()
 	{
 		StartPanel.SetActive(true);
 		InstructionPanel.SetActive(false);
 		StagePanel.SetActive(false);
+		CreditsMenu.SetActive(false);
+
 	}
 	public void NewGame(){
 		PlayerPrefs.DeleteAll ();

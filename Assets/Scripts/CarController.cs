@@ -297,14 +297,14 @@ public class CarController : MonoBehaviour {
 			Time.timeScale = 0;
 		//Spawns pianos 
 		} else if (other.tag == "Piano Collider Left") {
-			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, 0.3f), Quaternion.identity);
+			Instantiate (piano, new Vector3 (transform.position.x + 17.0f, 10.0f, 0.3f), Quaternion.identity);
 			Debug.Log ("Collide Obstacle");
 		} else if (other.tag == "Piano Collider Right") {
-			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, -1.5f), Quaternion.identity);
+			Instantiate (piano, new Vector3 (transform.position.x + 17.0f, 10.0f, -1.5f), Quaternion.identity);
 			Debug.Log ("Collide Obstacle");
 		} else if (other.tag == "Piano Collider Both") {
-			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, 0.3f), Quaternion.identity);
-			Instantiate (piano, new Vector3 (transform.position.x + 15.0f, 10.0f, -1.5f), Quaternion.identity);
+			Instantiate (piano, new Vector3 (transform.position.x + 17.0f, 10.0f, 0.3f), Quaternion.identity);
+			Instantiate (piano, new Vector3 (transform.position.x + 17.0f, 10.0f, -1.5f), Quaternion.identity);
 			Debug.Log ("Collide Obstacle");
 		}
 }

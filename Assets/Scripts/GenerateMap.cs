@@ -47,6 +47,7 @@ public class GenerateMap : MonoBehaviour {
 		jumpInv = GameObject.Find("JumpInverse");
 		switchInv = GameObject.Find("SwitchInverse");
 
+
 		if (PlayerPrefs.GetInt ("InvertControls") == 1) {
 			jumpButton.SetActive(false);
 			switchButton.SetActive(false);
